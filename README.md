@@ -9,7 +9,7 @@ This library provides the code for a flexible calculation of moral foundation sc
 - **[--output_file]:** The path for saving the MF scored output CSV file. The output file contains columns for MF scores concatenated to the original dataset.
 
 ### To-dos: 
-- word-embedding updating tool.
+- word-embedding updating tool + downloading the default
 - Supporting MFD2.
 - Document TFIDF tool. 
 - Add package requirements and documentation for how to setup python. 
