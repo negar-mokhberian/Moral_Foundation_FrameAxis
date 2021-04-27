@@ -1,5 +1,9 @@
 # Moral_Foundation_FrameAxis
 This library provides the code for a flexible calculation of moral foundation scores from textual input data.
+We have developed this framework inspired by [FrameAxis paper](https://arxiv.org/pdf/2002.08608.pdf).
+Using this framework we have studied two applications:
+- [Moral Framing and Ideological Bias of News, 2020](https://arxiv.org/pdf/2009.12979.pdf)
+- [Mapping Moral Valence of Tweets Following the Killing of George Floyd, 2021](https://arxiv.org/pdf/2104.09578.pdf)
 
 ## Command-Line Arguments
 - **[--input_file]:** Path to the dataset .csv file containing input text documents in a column.
