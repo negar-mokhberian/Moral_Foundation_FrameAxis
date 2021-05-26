@@ -47,7 +47,7 @@ class FrameAxis:
         axes = {}
         mfs = []
         all_vecs = []
-        grp = all_mft_expand.groupby('mf')
+        grp = all_mft_expand.groupby('category')
         for mf, mf_group in grp:
             print(mf)
             mfs.append(mf)
