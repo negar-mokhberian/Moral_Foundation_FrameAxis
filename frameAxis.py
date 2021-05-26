@@ -2,7 +2,7 @@ from collections import Counter
 from pathlib import Path
 import numpy as np
 import pandas as pd
-from preprocess_phase.preprocess_twitter import preprocess
+from preprocess.preprocess import preprocess
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
