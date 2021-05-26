@@ -11,12 +11,14 @@ class FrameAxis:
     def __init__(self, mfd=None, w2v_model=None):
 
         self.model = w2v_model
-        self.vocab = self.model.wv.vocab
+        self.vocab = self.model.vocab
         if mfd == "emfd":
             emfd = pd.read_csv(
-                'molar_foundation_dictionaries/eMFD_wordlist.csv')
+                'moral_foundation_dictionaries/eMFD_wordlist.csv')
             self.axes, mfs = self._get_emfd_axes(emfd)
         elif mfd == "mfd":
+            mfd = pd.read_csv(
+                'moral_foundations_dictionaries/MFD_orignial.csv')
             self.axes, mfs = self._get_axes(mfd)
         # todo add "mfd2"
         self.cos_sim_dict = {'authority': {}, 'fairness': {}, 'general_morality': {}, 'harm': {}, 'ingroup': {},
