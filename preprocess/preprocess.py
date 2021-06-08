@@ -19,7 +19,8 @@ stop_words = [' rt ', 'i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves
               "needn't", 'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't",
               'wouldn', "wouldn't"]
 
-
+def isNaN(string):
+    return string != string
 
 def _sanitize(text: str) -> str:
     """Cleans text by removing whitespace, newlines and tabs
@@ -29,6 +30,8 @@ def _sanitize(text: str) -> str:
 
 
 def deEmojify(text):
+    if isNaN(text): return ""
+    
     regrex_pattern = re.compile(pattern="["
                                         u"\U0001F600-\U0001F64F"  # emoticons
                                         u"\U0001F300-\U0001F5FF"  # symbols & pictographs
