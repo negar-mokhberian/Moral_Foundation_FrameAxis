@@ -37,7 +37,7 @@ if __name__ == '__main__':
     if args.word_embedding_model is not None:
         W2V_PATH = args.word_embedding_model
 
-    data = pd.read_csv(IN_PATH)
+    data = pd.read_csv(IN_PATH,lineterminator='\n')
     model = KeyedVectors.load_word2vec_format(W2V_PATH, binary=False)
 
     fa = FrameAxis(mfd=DICT_TYPE, w2v_model=model)

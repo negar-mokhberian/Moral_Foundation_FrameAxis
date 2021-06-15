@@ -14,11 +14,11 @@ class FrameAxis:
         self.vocab = self.model.vocab
         if mfd == "emfd":
             emfd = pd.read_csv(
-                'moral_foundation_dictionaries/eMFD_wordlist.csv')
+                './Moral_Foundation_FrameAxis/moral_foundation_dictionaries/eMFD_wordlist.csv')
             self.axes, mfs = self._get_emfd_axes(emfd)
         elif mfd == "mfd":
             mfd = pd.read_csv(
-                'moral_foundations_dictionaries/MFD_orignial.csv')
+                './Moral_Foundation_FrameAxis/moral_foundations_dictionaries/MFD_original.csv')
             self.axes, mfs = self._get_axes(mfd)
         # todo add "mfd2"
         self.cos_sim_dict = {'authority': {}, 'fairness': {}, 'general_morality': {}, 'harm': {}, 'ingroup': {},
