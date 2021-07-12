@@ -18,7 +18,7 @@ class FrameAxis:
             self.axes, mfs = self._get_emfd_axes(emfd)
         elif mfd == "mfd":
             mfd = pd.read_csv(
-                './Moral_Foundation_FrameAxis/moral_foundations_dictionaries/MFD_original.csv')
+                './Moral_Foundation_FrameAxis/moral_foundation_dictionaries/MFD_original.csv')
             self.axes, mfs = self._get_axes(mfd)
         # todo add "mfd2"
         self.cos_sim_dict = {'authority': {}, 'fairness': {}, 'general_morality': {}, 'harm': {}, 'ingroup': {},
