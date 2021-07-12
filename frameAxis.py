@@ -54,7 +54,7 @@ class FrameAxis:
             diffs = []
             for index1, row1 in mf_group.iterrows():
                 for index2, row2 in mf_group.iterrows():
-                    if row1['polarization'] == 'virtues' and row2['polarization'] == 'vices':
+                    if row1['sentiment'] == 'virtues' and row2['sentiment'] == 'vices':
                         try:
                             diffs.append(self.model[row1['word']] - self.model[row2['word']])
                         except KeyError:
