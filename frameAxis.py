@@ -62,13 +62,6 @@ class FrameAxis:
 					vice_vecs.append(self.model[w])
 				except KeyError:
 					print(w)
-		#	for index1, row1 in mf_group.iterrows():
-		#		for index2, row2 in mf_group.iterrows():
-		#			if row1['sentiment'] == 'virtues' and row2['sentiment'] == 'vices':
-		#				try:
-		#					diffs.append(self.model[row1['word']] - self.model[row2['word']])
-		#				except KeyError:
-		#					pass
 
 			virtues_centroid = np.array(virtue_vecs)
 			print(virtues_centroid.shape)
