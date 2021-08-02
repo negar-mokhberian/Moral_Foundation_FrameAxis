@@ -23,6 +23,10 @@ class FrameAxis:
 			# todo if none above throw exception
 			self.cos_sim_dict = {'authority': {}, 'fairness': {}, 'general_morality': {}, 'harm': {}, 'ingroup': {},
 						 'liberty': {}, 'purity': {}}
+			elif mfd == "customized":
+				custom = pd.read_csv(
+					f'{current_dir_path}/customized.csv')
+					self.axes, categories = self._get_axes(custom)
 
 	def vocab_sim_axes(self):
 		rows = []
@@ -51,7 +55,6 @@ class FrameAxis:
 			vice_vecs = []
 			print(mf)
 			mfs.append(mf)
-			import pdb; pdb.set_trace()
 			for w in mf_group.loc[mf_group['sentiment']=='virtues', 'word']:
 				try:
 					virtue_vecs.append(self.model[w])
@@ -64,9 +67,9 @@ class FrameAxis:
 					print(w)
 
 			virtues_centroid = np.array(virtue_vecs)
-			print(virtues_centroid.shape)
+			#print(virtues_centroid.shape)
 			vices_centroid = np.array(vice_vecs)
-			print(vices_centroid.shape)
+			#print(vices_centroid.shape)
 			mf_axis = np.mean(virtues_centroid, axis=0) - np.mean(vices_centroid, axis=0)
 			print(mf_axis.shape)
 			axes[mf] = mf_axis
