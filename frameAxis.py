@@ -19,15 +19,15 @@ class FrameAxis:
 					mfd = pd.read_csv(
 					f'{current_dir_path}/moral_foundation_dictionaries/MFD_original.csv')
 					self.axes, mfs = self._get_axes(mfd)
-			# todo add "mfd2"
-			# todo if none above throw exception
-			self.cos_sim_dict = {'authority': {}, 'fairness': {}, 'general_morality': {}, 'harm': {}, 'ingroup': {},
-						 'liberty': {}, 'purity': {}}
 			elif mfd == "customized":
 				custom = pd.read_csv(
 					f'{current_dir_path}/customized.csv')
 					self.axes, categories = self._get_axes(custom)
-			# todo else: throw exception for invalid mfd
+			# todo add "mfd2"
+			# todo if none above throw exception
+			self.cos_sim_dict = {'authority': {}, 'fairness': {}, 'general_morality': {}, 'harm': {}, 'ingroup': {},
+						 'liberty': {}, 'purity': {}}
+			
 
 	def vocab_sim_axes(self):
 		rows = []
