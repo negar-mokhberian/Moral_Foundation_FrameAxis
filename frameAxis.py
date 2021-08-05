@@ -27,6 +27,7 @@ class FrameAxis:
 				custom = pd.read_csv(
 					f'{current_dir_path}/customized.csv')
 					self.axes, categories = self._get_axes(custom)
+			# todo else: throw exception for invalid mfd
 
 	def vocab_sim_axes(self):
 		rows = []
