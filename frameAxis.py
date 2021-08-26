@@ -24,7 +24,8 @@ class FrameAxis:
 					f'{current_dir_path}/customized.csv')
 				self.axes, categories = self._get_axes(custom)
 			# todo add "mfd2"
-			# todo if none above throw exception
+			else:
+				raise ValueError(f'Invalid mfd value: {mfd}f)
 			self.cos_sim_dict = {'authority': {}, 'fairness': {}, 'general_morality': {}, 'harm': {}, 'ingroup': {},
 						 'liberty': {}, 'purity': {}}
 			
