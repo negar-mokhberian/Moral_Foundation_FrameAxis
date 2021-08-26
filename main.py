@@ -36,9 +36,12 @@ if __name__ == '__main__':
     DOCS_COL = args.docs_colname
     if args.word_embedding_model is not None:
         W2V_PATH = args.word_embedding_model
+        model = KeyedVectors.load_word2vec_format(W2V_PATH, binary=False)
+    else:
+        import gensim.downloader
+        model = gensim.downloader.load('word2vec-google-news-300')
 
     data = pd.read_csv(IN_PATH,lineterminator='\n')
-    model = KeyedVectors.load_word2vec_format(W2V_PATH, binary=False)
 
     fa = FrameAxis(mfd=DICT_TYPE, w2v_model=model)
     mf_scores = fa.get_fa_scores(df=data, doc_colname=DOCS_COL, tfidf=False, format="virtue_vice",
