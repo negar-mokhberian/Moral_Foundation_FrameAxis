@@ -22,7 +22,7 @@ class FrameAxis:
 			elif mfd == "customized":
 				custom = pd.read_csv(
 					f'{current_dir_path}/customized.csv')
-					self.axes, categories = self._get_axes(custom)
+				self.axes, categories = self._get_axes(custom)
 			# todo add "mfd2"
 			# todo if none above throw exception
 			self.cos_sim_dict = {'authority': {}, 'fairness': {}, 'general_morality': {}, 'harm': {}, 'ingroup': {},
