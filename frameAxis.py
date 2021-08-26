@@ -25,7 +25,7 @@ class FrameAxis:
 				self.axes, categories = self._get_axes(custom)
 			# todo add "mfd2"
 			else:
-				raise ValueError(f'Invalid mfd value: {mfd}f)
+				raise ValueError(f'Invalid mfd value: {mfd}')
 			self.cos_sim_dict = {'authority': {}, 'fairness': {}, 'general_morality': {}, 'harm': {}, 'ingroup': {},
 						 'liberty': {}, 'purity': {}}
 			
