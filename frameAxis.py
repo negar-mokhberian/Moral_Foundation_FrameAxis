@@ -9,7 +9,7 @@ import os
 class FrameAxis:
 	def __init__(self, mfd=None, w2v_model=None):
 			self.model = w2v_model
-			self.vocab = self.model.vocab
+			self.vocab = model.key_to_index.keys() # for older gensim self.model.vocab
 			current_dir_path = os.path.dirname(os.path.realpath(__file__))
 			if mfd == "emfd":
 					emfd = pd.read_csv(
