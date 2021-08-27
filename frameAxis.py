@@ -61,17 +61,17 @@ class FrameAxis:
 				try:
 					virtue_vecs.append(self.model[w])
 				except KeyError:
-					print(w)
+					print(f'{w} not recognized in word embedding model')
 			for w in mf_group.loc[mf_group['sentiment']=='vices', 'word']:
 				try:
 					vice_vecs.append(self.model[w])
 				except KeyError:
-					print(w)
+					print(f'{w} not recognized in word embedding model')
 
 			virtues_centroid = np.array(virtue_vecs)
-			#print(virtues_centroid.shape)
+			print(virtues_centroid.shape)
 			vices_centroid = np.array(vice_vecs)
-			#print(vices_centroid.shape)
+			print(vices_centroid.shape)
 			mf_axis = np.mean(virtues_centroid, axis=0) - np.mean(vices_centroid, axis=0)
 			print(mf_axis.shape)
 			axes[mf] = mf_axis
