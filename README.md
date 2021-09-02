@@ -22,6 +22,15 @@ FrameAxis is a flexible framework and all it needs is sets of antonym words. The
 - **[--word_embedding_model]:** Path to the word embedding model used to map words to a vector space. If not specified a default w2v model will be used.
 - **[--output_file]:** The path for saving the MF scored output CSV file. The output file contains columns for MF scores concatenated to the original dataset.
 
+### Sample running script in terminal:
+IN_FILE="path_to_your_input.csv"
+COLNAME="colname of text data"
+DICT="mfd"
+OUT_FILE="path_to_save_results.csv"
+'''
+python main.py --input_file $IN_FILE --docs_colname $COLNAME --dict_type $DICT --output_file $OUT_FILE"
+'''
+
 ### To-dos: 
 - word-embedding updating tool + downloading the default
 - Supporting MFD2.
