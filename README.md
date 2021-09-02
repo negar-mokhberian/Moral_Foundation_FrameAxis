@@ -18,7 +18,7 @@ FrameAxis is a flexible framework and all it needs is sets of antonym words. The
 - **[--input_file]:** Path to the dataset .csv file containing input text documents in a column.
 - **[--docs_colname]:** The name of the column in the input file that contains the texts to calculate the MF scores on. 
 
-- **[--dict_type]:** Dictionary for calculating FrameAxis Scores. Possible values are: emfd, mfd, mfd2, and custom. 
+- **[--dict_type]:** Dictionary for calculating FrameAxis Scores. Possible values are: emfd, mfd, mfd2, and customized. 
 - **[--word_embedding_model]:** Path to the word embedding model used to map words to a vector space. If not specified a default w2v model will be used.
 - **[--output_file]:** The path for saving the MF scored output CSV file. The output file contains columns for MF scores concatenated to the original dataset.
 
