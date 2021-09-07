@@ -21,7 +21,7 @@ class FrameAxis:
 					self.axes, mfs = self._get_axes(mfd)
 			elif mfd == "customized":
 				custom = pd.read_csv(
-					f'{current_dir_path}/customized.csv')
+					f'{current_dir_path}/moral_foundation_dictionaries/customized.csv')
 				self.axes, categories = self._get_axes(custom)
 			# todo add "mfd2"
 			else:
