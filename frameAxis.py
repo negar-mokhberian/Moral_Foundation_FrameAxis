@@ -30,9 +30,9 @@ class FrameAxis:
 						 'liberty': {}, 'purity': {}}
 			
 
-	def vocab_sim_axes(self):
+	def vocab_sim_axes(self, words=self.vocab):
 		rows = []
-		for word in self.vocab:
+		for word in words:
 			row_dict = {'token': word}
 			for mf in self.axes.keys():
 				row_dict[mf] = self.cos_sim(self.model[word], self.axes[mf])
