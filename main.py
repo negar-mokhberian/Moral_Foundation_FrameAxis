@@ -32,6 +32,8 @@ if __name__ == '__main__':
 
     IN_PATH = args.input_file
     DICT_TYPE = args.dict_type
+    if DICT_TYPE not in ["emfd", "mfd", "mfd2", "customized"]:
+        raise ValueError(f'Invalid dictionary type received: {DICT_TYPE}, dict_type must be one of \"emfd\", \"mfd\", \"mfd2\", \"customized\"')
     OUT_CSV_PATH = args.output_file
     DOCS_COL = args.docs_colname
     if args.word_embedding_model is not None:
