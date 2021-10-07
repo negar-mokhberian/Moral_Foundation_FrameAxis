@@ -36,7 +36,10 @@ class FrameAxis:
 		for word in words:
 			row_dict = {'token': word}
 			for mf in self.axes.keys():
-				row_dict[mf] = self.cos_sim(self.model[word], self.axes[mf])
+				if word in self.vocab:
+					row_dict[mf] = self.cos_sim(self.model[word], self.axes[mf])
+				else:
+					row_dict[mf] = np.nan
 			rows.append(row_dict)
 
 		df_sim = pd.DataFrame(rows)
