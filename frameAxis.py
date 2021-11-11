@@ -22,7 +22,7 @@ class FrameAxis:
 			elif mfd == "mfd2":
     				num_to_mf = {}
 				mfs_df = []
-    				with open('mfd2.txt', 'r') as mfd2:
+    				with open('{current_dir_path}/moral_foundation_dictionaries/mfd2.txt', 'r') as mfd2:
         				reading_keys = False
 					for line in mfd2:
 					    line = line.strip()
