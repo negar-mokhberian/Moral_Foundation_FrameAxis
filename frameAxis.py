@@ -19,6 +19,30 @@ class FrameAxis:
 					mfd = pd.read_csv(
 					f'{current_dir_path}/moral_foundation_dictionaries/MFD_original.csv')
 					self.axes, mfs = self._get_axes(mfd)
+			elif mfd == "mfd2":
+    				num_to_mf = {}
+				mfs_df = []
+    				with open('mfd2.txt', 'r') as mfd2:
+        				reading_keys = False
+					for line in mfd2:
+					    line = line.strip()
+					    if line == '%' and not reading_keys:
+						reading_keys = True
+						continue
+					    if line == '%' and reading_keys:
+						reading_keys = False
+						continue
+					    if reading_keys:
+						num, mf = line.split()
+						print(num, mf)
+						num_to_mf[num] = mf
+						mfs_dict[mf] = []
+					    else:
+						word, num = line.split()
+						mf = num_to_mf[num]
+						mfs_df.append({'mf':mf.split()[0], 'word': word, 'sentiment':mf.split()[1]}
+				mfd2 = pd.DataFrame(mfs_df)
+				self.axes, mfs = self._get_axes(mfd2)
 			elif mfd == "customized":
 				custom = pd.read_csv(
 					f'{current_dir_path}/moral_foundation_dictionaries/customized.csv')
