@@ -30,9 +30,3 @@ DICT="mfd"
 OUT_FILE="path_to_save_results.csv"
 python main.py --input_file $IN_FILE --docs_colname $COLNAME --dict_type $DICT --output_file $OUT_FILE
 ```
-
-### To-dos: 
-- word-embedding updating tool + downloading the default
-- Supporting MFD2.
-- Document TFIDF tool. 
-- Add package requirements and documentation for how to setup python. 
