@@ -14,25 +14,25 @@ class FrameAxis:
         self.model = w2v_model
         self.vocab = self.model.key_to_index.keys()  # for older gensim self.model.vocab
         current_dir_path = os.path.dirname(os.path.realpath(__file__))
+
         if mfd == "emfd":
             words_df = pd.read_csv(
                 f'{current_dir_path}/moral_foundation_dictionaries/eMFD_wordlist.csv')
-
-        elif mfd == "mfd":
-            words_df = pd.read_csv(
-                f'{current_dir_path}/moral_foundation_dictionaries/MFD_original.csv')
-
-        elif mfd == "mfd2":
-            words_df = self.read_mfd2_into_dataframe(current_dir_path)
-
-        elif mfd == "customized":
-            words_df = pd.read_csv(f'{current_dir_path}/moral_foundation_dictionaries/customized.csv')
-
+            self.axes, categories = self._get_emfd_axes(words_df)
+            print('axes names: ', categories)
         else:
-            raise ValueError(f'Invalid mfd value: {mfd}')
-
-        self.axes, categories = self._compute_axes(words_df)
-        print('axes names: ', categories)
+            if mfd == "mfd":
+                words_df = pd.read_csv(
+                    f'{current_dir_path}/moral_foundation_dictionaries/MFD_original.csv')
+            elif mfd == "mfd2":
+                words_df = self.read_mfd2_into_dataframe(current_dir_path)
+            elif mfd == "customized":
+                words_df = pd.read_csv(f'{current_dir_path}/moral_foundation_dictionaries/customized.csv')
+            else:
+                raise ValueError(f'Invalid mfd value: {mfd}')
+            
+            self.axes, categories = self._compute_axes(words_df)
+            print('axes names: ', categories)
 
         # self.cos_sim_dict = {'authority': {}, 'fairness': {}, 'general_morality': {}, 'harm': {}, 'ingroup': {},
         #                      'liberty': {}, 'purity': {}}
