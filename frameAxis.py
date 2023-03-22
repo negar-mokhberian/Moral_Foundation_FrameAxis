@@ -275,6 +275,7 @@ class FrameAxis:
     def get_fa_scores(self, df, doc_colname, save_path=None, tfidf=False,
                       format="virtue_vice"):
         df = df.reset_index(drop=True)
+        df.columns = [i.rstrip() for i in df.columns]
         docs = df[doc_colname]
         print(f'Preprocessing column {doc_colname}')
         docs = preprocess(docs).reset_index(drop=True)
